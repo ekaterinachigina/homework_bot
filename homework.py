@@ -69,7 +69,7 @@ def send_message(bot, message):
         bot.send_message(TELEGRAM_CHAT_ID, message)
         logger.debug(MESSAGE_SENT.format(message))
     except telegram.TelegramError:
-        logger.error(MESSAGE_NOT_SENT)
+        logger.exception()(MESSAGE_NOT_SENT)
 
 
 def get_api_answer(timestamp):
